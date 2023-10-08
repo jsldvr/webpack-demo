@@ -1,0 +1,13 @@
+# .gitignore
+
+# node_modules
+node_modules
+
+# macOS assets
+.DS_Store
+
+# windows assets
+Thumbs.db
+
+# vscode
+.vscode
