@@ -22,7 +22,7 @@ class Index {
         console.log("Index.init");
         this.header();
         this.main();
-        this.footer();
+        // this.footer();
     }
 
     header() {
@@ -30,8 +30,7 @@ class Index {
         const header = _e("header", {
             class: "header"
         }, [
-            _e("h1", { class: "header__title" }, [], "Index"),
-            _e("p", { class: "header__subtitle" }, [], "Index file for demo-project")
+            _e("p", { class: "header__text" }, [], "Header")
         ]);
         document.body.appendChild(header);
     }
@@ -46,15 +45,15 @@ class Index {
         document.body.appendChild(main);
     }
 
-    footer() {
-        console.log("Index.footer");
-        const footer = _e("footer", {
-            class: "footer"
-        }, [
-            _e("p", { class: "footer__text" }, [], "Footer")
-        ]);
-        document.body.appendChild(footer);
-    }
+    // footer() {
+    //     console.log("Index.footer");
+    //     const footer = _e("footer", {
+    //         class: "footer"
+    //     }, [
+    //         _e("p", { class: "footer__text" }, [], "Footer")
+    //     ]);
+    //     document.body.appendChild(footer);
+    // }
 }
 
 // new Index(new Global, new Custom);

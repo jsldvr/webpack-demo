@@ -1,4 +1,6 @@
 .
+├── CHANGELOG.md
+├── NOTES.md
 ├── README.md
 ├── TREE.md
 ├── assets
@@ -10,17 +12,6 @@
 │   ├── style
 │   │   └── global.css
 │   └── vendor
-├── dist
-│   ├── README.md
-│   ├── public
-│   │   └── example.com
-│   │       ├── bundle.js
-│   │       └── index.html
-│   └── stage
-│       └── example.com
-│           ├── bundle.js
-│           ├── index.html
-│           └── main.js
 ├── package-lock.json
 ├── package.json
 ├── src
@@ -44,4 +35,4 @@
 │           └── default.css
 └── webpack.config.js
 
-19 directories, 25 files
+14 directories, 21 files

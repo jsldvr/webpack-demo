@@ -12,19 +12,15 @@
  * @example _e('div');
  */
 
-export default function _e(tag, attributes = [], appendChild = [], innerHTML) {
-    let element = document.createElement(tag);
+export function _e(tag, attributes = {}, children = [], innerHTML) {
+    const element = document.createElement(tag);
 
-    if (attributes.length > 0) {
-        attributes.forEach(attribute => {
-            element.setAttribute(attribute[0], attribute[1]);
-        });
+    for (const [attr, value] of Object.entries(attributes)) {
+        element.setAttribute(attr, value);
     }
 
-    if (appendChild.length > 0) {
-        appendChild.forEach(child => {
-            element.appendChild(child);
-        });
+    for (const child of children) {
+        element.appendChild(child);
     }
 
     if (innerHTML) {
@@ -33,3 +29,4 @@ export default function _e(tag, attributes = [], appendChild = [], innerHTML) {
 
     return element;
 }
+
