@@ -4,40 +4,31 @@
  * @returns {HTMLElement} - The newly created div element containing the text "Hello World!"
  */
 
-import { Global } from "../../assets/scripts/classGlobal";
 import { createElement } from "../../assets/scripts/utils/createElement";
 
-import { Custom } from "./scripts/custom";
-
+import { default_js } from "./scripts/default";
+import "./style/default.css";
 
 class Index {
-    constructor(global = new Global, custom = new Custom) {
-        console.log("Index");
-        this.global = global;
-        this.custom = custom;
-        this.init();
-    }
 
     init() {
-        console.log("Index.init");
+        default_js();
         this.header();
         this.main();
         this.footer();
     }
 
     header() {
-        console.log("Index.header");
-        const header = createElement("header", {
+        const elem = createElement("header", {
             class: "header"
         }, [
             createElement("h1", { class: "header__title" }, [], "Index"),
             createElement("p", { class: "header__subtitle" }, [], "Index file for demo-project")
         ]);
-        document.body.appendChild(header);
+        document.body.appendChild(elem);
     }
 
     main() {
-        console.log("Index.main");
         const main = createElement("main", {
             class: "main"
         }, [
@@ -47,7 +38,6 @@ class Index {
     }
 
     footer() {
-        console.log("Index.footer");
         const footer = createElement("footer", {
             class: "footer"
         }, [
@@ -57,5 +47,7 @@ class Index {
     }
 }
 
-// new Index(new Global, new Custom);
-// new Index;
+const app = new Index();
+app.init();
+
+console.log("App started");

@@ -6,7 +6,10 @@ module.exports = (env) => {
     const dist_path = env && env.stage ? 'stage' : 'public';
 
     return {
-        entry: `./src/${project_name}/index.js`,
+        entry: [
+            'bootstrap/dist/css/bootstrap.min.css',
+            `./src/${project_name}/index.js`
+        ],
         output: {
             filename: 'bundle.js',
             path: path.resolve(__dirname, 'dist', dist_path, project_name),
