@@ -11,3 +11,7 @@ Thumbs.db
 
 # vscode
 .vscode
+
+# project dist
+dist
+_dist
