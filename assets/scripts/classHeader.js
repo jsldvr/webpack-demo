@@ -4,7 +4,7 @@
  * @class Header
  */
 
-import _e from "./func/createElement";
+import createElement from "./func/createElement";
 
 export class Header {
     /**
@@ -23,6 +23,6 @@ export class Header {
     }
 
     html() {
-        return _e('header', [], [_e('h1', [], [], 'Header')]);
+        return createElement('header', [], [createElement('h1', [], [], 'Header')]);
     }
 }

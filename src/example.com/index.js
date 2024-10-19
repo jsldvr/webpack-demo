@@ -5,7 +5,7 @@
  */
 
 import { Global } from "../../assets/scripts/classGlobal";
-import { _e } from "../../assets/scripts/utils/createElement";
+import { createElement } from "../../assets/scripts/utils/createElement";
 
 import { Custom } from "./scripts/custom";
 
@@ -27,35 +27,35 @@ class Index {
 
     header() {
         console.log("Index.header");
-        const header = _e("header", {
+        const header = createElement("header", {
             class: "header"
         }, [
-            _e("h1", { class: "header__title" }, [], "Index"),
-            _e("p", { class: "header__subtitle" }, [], "Index file for demo-project")
+            createElement("h1", { class: "header__title" }, [], "Index"),
+            createElement("p", { class: "header__subtitle" }, [], "Index file for demo-project")
         ]);
         document.body.appendChild(header);
     }
 
     main() {
         console.log("Index.main");
-        const main = _e("main", {
+        const main = createElement("main", {
             class: "main"
         }, [
-            _e("p", { class: "main__text" }, [], "Index")
+            createElement("p", { class: "main__text" }, [], "Index")
         ]);
         document.body.appendChild(main);
     }
 
     footer() {
         console.log("Index.footer");
-        const footer = _e("footer", {
+        const footer = createElement("footer", {
             class: "footer"
         }, [
-            _e("p", { class: "footer__text" }, [], "Footer")
+            createElement("p", { class: "footer__text" }, [], "Footer")
         ]);
         document.body.appendChild(footer);
     }
 }
 
 // new Index(new Global, new Custom);
-new Index;
+// new Index;

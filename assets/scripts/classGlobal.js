@@ -15,6 +15,6 @@ export class Global {
     }
 
     env() {
-        return process.env.NODE_ENV;
+        return process.env.NODEcreateElementNV;
     }
 }
