@@ -1,5 +1,16 @@
 const path = require('path');
 const html_webpack_plugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+/**
+ * Semantic versioning
+ * @link https://semver.org/
+ */
+const appVersion = '3.2.3' // See CHANGELOG.md for version history
+
+process.on('warning', (warning) => {
+    console.trace(warning);
+});
 
 module.exports = (env) => {
     const project_name = env && env.project ? env.project : 'default';
@@ -50,6 +61,12 @@ module.exports = (env) => {
             host: '0.0.0.0',
             port: 3000, // You can change this port if needed
             allowedHosts: 'all' // Allow all hosts to access the dev server
+        },
+        resolve: {
+            alias: {
+                app: path.resolve(__dirname, 'app/'),
+                assets: path.resolve(__dirname, 'assets/')
+            }
         }
     };
 };

@@ -22,8 +22,8 @@ class Index {
         const elem = createElement("header", {
             class: "header"
         }, [
-            createElement("h1", { class: "header__title" }, [], "Index"),
-            createElement("p", { class: "header__subtitle" }, [], "Index file for demo-project")
+            createElement("h1", { class: "header__title" }, [], "Site Title"),
+            createElement("p", { class: "header__subtitle" }, [], "Description")
         ]);
         document.body.appendChild(elem);
     }
@@ -31,9 +31,7 @@ class Index {
     main() {
         const main = createElement("main", {
             class: "main"
-        }, [
-            createElement("p", { class: "main__text" }, [], "Index")
-        ]);
+        }, []);
         document.body.appendChild(main);
     }
 
@@ -49,5 +47,3 @@ class Index {
 
 const app = new Index();
 app.init();
-
-console.log("App started");
