@@ -6,13 +6,10 @@ const webpack = require('webpack');
  * Semantic versioning
  * @link https://semver.org/
  */
-const appVersion = '3.2.3' // See CHANGELOG.md for version history
-
-process.on('warning', (warning) => {
-    console.trace(warning);
-});
+const version = '0.0.1-alpha' // See CHANGELOG.md for version history
 
 module.exports = (env) => {
+    const src_domain_config = require(path.join(__dirname, `src/${env.project}/config.js`));
     const project_name = env && env.project ? env.project : 'default';
     const dist_path = env && env.stage ? 'stage' : 'public';
 
@@ -32,7 +29,10 @@ module.exports = (env) => {
                 filename: 'index.html',
                 // inject: 'body',
                 inject: true,
-            })
+            }),
+            new webpack.DefinePlugin({
+                'process.env': JSON.stringify(src_domain_config),
+            }),
         ],
         module: {
             rules: [

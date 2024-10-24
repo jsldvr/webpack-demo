@@ -1,4 +1,7 @@
+/**
+ * @file Constants for the application
+ * 
+ * @module app/constants
+ */
 
-import { site_name } from './config';
-
-const site_name = module.exports.site_name;
+export const site_name = process.env.site_name;
