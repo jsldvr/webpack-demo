@@ -35,6 +35,7 @@ module.exports = (env) => {
         ],
         module: {
             rules: [
+                // This added bootstrap to the dom 
                 // {
                 //     test: /\.css$/,
                 //     use: [
