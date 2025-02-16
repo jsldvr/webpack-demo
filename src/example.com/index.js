@@ -4,58 +4,56 @@
  * @returns {HTMLElement} - The newly created div element containing the text "Hello World!"
  */
 
-import { Global } from "../../assets/scripts/classGlobal";
-import { _e } from "../../assets/scripts/utils/createElement";
+import { createElement } from "assets/scripts/utils/createElement";
+// import { createHeader } from "assets/html/header";
+// import { createFooter } from "assets/html/footer";
+import { site_name } from "app/constants";
 
-import { Custom } from "./scripts/custom";
-
+import { default_js } from "./scripts/default";
+import "./style/default.css";
+import { site_desc } from "./config";
 
 class Index {
-    constructor(global = new Global, custom = new Custom) {
-        console.log("Index");
-        this.global = global;
-        this.custom = custom;
-        this.init();
-    }
 
     init() {
-        console.log("Index.init");
-        this.header();
-        this.main();
-        this.footer();
+        let config_stuff = {
+            site_name: site_name,
+            site_desc: site_desc
+        }
+        console.log(config_stuff)
+        // console.log(site_name)
+        // default_js();
+        // this.header();
+        // this.main();
+        // this.footer();
     }
 
     header() {
-        console.log("Index.header");
-        const header = _e("header", {
+        const elem = createElement("header", {
             class: "header"
         }, [
-            _e("h1", { class: "header__title" }, [], "Index"),
-            _e("p", { class: "header__subtitle" }, [], "Index file for demo-project")
+            createElement("h1", { class: "header__title" }, [], "Site Title"),
+            createElement("p", { class: "header__subtitle" }, [], "Description")
         ]);
-        document.body.appendChild(header);
+        document.body.appendChild(elem);
     }
 
     main() {
-        console.log("Index.main");
-        const main = _e("main", {
+        const main = createElement("main", {
             class: "main"
-        }, [
-            _e("p", { class: "main__text" }, [], "Index")
-        ]);
+        }, []);
         document.body.appendChild(main);
     }
 
     footer() {
-        console.log("Index.footer");
-        const footer = _e("footer", {
+        const footer = createElement("footer", {
             class: "footer"
         }, [
-            _e("p", { class: "footer__text" }, [], "Footer")
+            createElement("p", { class: "footer__text" }, [], "Footer")
         ]);
         document.body.appendChild(footer);
     }
 }
 
-// new Index(new Global, new Custom);
-new Index;
+const app = new Index();
+app.init();

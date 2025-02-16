@@ -6,13 +6,13 @@
  * @param {array} appendChild
  * @param {string} innerHTML
  * @returns {object}
- * @example _e('div', [['class', 'container']], [_e('h1', [], [], 'Hello World!')]);
- * @example _e('div', [['class', 'container']], [], 'Hello World!');
- * @example _e('div', [['class', 'container']]);
- * @example _e('div');
+ * @example createElement('div', [['class', 'container']], [createElement('h1', [], [], 'Hello World!')]);
+ * @example createElement('div', [['class', 'container']], [], 'Hello World!');
+ * @example createElement('div', [['class', 'container']]);
+ * @example createElement('div');
  */
 
-export default function _e(tag, attributes = [], appendChild = [], innerHTML) {
+export function createElement(tag, attributes = [], appendChild = [], innerHTML) {
     let element = document.createElement(tag);
 
     if (attributes.length > 0) {
