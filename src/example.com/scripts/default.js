@@ -5,6 +5,6 @@
  * @since 1.0.0
  */
 
-export function default_js(params) {
-    console.log('default_js');
+export function test(params) {
+    console.log('test');
 }

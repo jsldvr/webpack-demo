@@ -35,14 +35,10 @@ module.exports = (env) => {
         ],
         module: {
             rules: [
-                // This added bootstrap to the dom 
-                // {
-                //     test: /\.css$/,
-                //     use: [
-                //         'style-loader',
-                //         'css-loader'
-                //     ]
-                // },
+                {
+                    test: /\.css$/i,
+                    use: ["style-loader", "css-loader"]
+                },
                 {
                     test: /\.(png|jpg|gif)$/,
                     use: [
