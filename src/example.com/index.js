@@ -20,7 +20,7 @@ class Index {
             site_name: site_name,
             site_desc: site_desc
         }
-        console.log(config_stuff)
+        // console.log(config_stuff)
         // console.log(site_name)
         // default_js();
         // this.header();
@@ -55,5 +55,5 @@ class Index {
     }
 }
 
-const app = new Index();
-app.init();
+// const app = new Index();
+// app.init();

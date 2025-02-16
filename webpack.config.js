@@ -15,7 +15,7 @@ module.exports = (env) => {
 
     return {
         entry: [
-            'bootstrap/dist/css/bootstrap.min.css',
+            // 'bootstrap/dist/css/bootstrap.min.css',
             `./src/${project_name}/index.js`
         ],
         output: {
@@ -27,8 +27,7 @@ module.exports = (env) => {
             new html_webpack_plugin({
                 template: `./src/${project_name}/index.html`,
                 filename: 'index.html',
-                // inject: 'body',
-                inject: true,
+                inject: 'body',
             }),
             new webpack.DefinePlugin({
                 'process.env': JSON.stringify(src_domain_config),
@@ -36,13 +35,13 @@ module.exports = (env) => {
         ],
         module: {
             rules: [
-                {
-                    test: /\.css$/,
-                    use: [
-                        'style-loader',
-                        'css-loader'
-                    ]
-                },
+                // {
+                //     test: /\.css$/,
+                //     use: [
+                //         'style-loader',
+                //         'css-loader'
+                //     ]
+                // },
                 {
                     test: /\.(png|jpg|gif)$/,
                     use: [
